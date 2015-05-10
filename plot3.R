@@ -29,7 +29,7 @@ DateTime <- strptime(DateTime, "%d/%m/%Y %H:%M:%S")
 #add a new column to the date frame with date formated time
 feb <- cbind(feb, DateTime)
 
-#make the histogram and print it in pnd file
+#make the plot and print it in png file
 png("plot3.png")#png default height is 480 and default width is 480 pixels, no need to specify explicitly
 with(feb, plot(DateTime, Sub_metering_1, type = "n", ylab = "Energy sub metering", xlab = ""))
 with(feb,lines(DateTime, Sub_metering_1, col = "black"))

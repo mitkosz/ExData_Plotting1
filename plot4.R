@@ -10,7 +10,7 @@ data <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", 
 #find the rows you want to subset
 # days: 1-Feb-2007 and 2-Feb-2007
 #the format of date column is : day/month/year
-#"1/2/2007" selects also  "11/2/2007"...need to specify the begging of the line with ^
+#"1/2/2007" selects also  "11/2/2007"...need to specify the begining of the line with ^
 index <- grep("^1/2/2007|^2/2/2007", data$Date)
 length(index) #there are 2880 rows that meet the criteria
 
@@ -29,7 +29,7 @@ DateTime <- strptime(DateTime, "%d/%m/%Y %H:%M:%S")
 #add a new column to the date frame with date formated time
 feb <- cbind(feb, DateTime)
 
-#make the histogram and print it in pnd file
+#make the plot and print it in png file
 png("plot4.png")#png default height is 480 and default width is 480 pixels, no need to specify explicitly
 par(mfrow = c(2,2))
 with(feb,{
